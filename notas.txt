@@ -407,10 +407,67 @@ bash, utilerías
 Programación shell
 secuencia booting
 Usuarios
-Kernel y Dispositivos
+Kernel y Dispositivos  //monolitico o modular
 Software
 Red
 Respaldos
 Procesos
 Seguridad
+
+////////////////////
+Habilidades
+
+Comandos básicos unix
+Editor Vi
+conocimiento de la estructura de directorios
+Secuencia de booteo
+Comunicación con usuarios
+Organización
+Documentación
+
+///////////////
+Funciones
+
+Automatización de tareas
+Monitoreo del sistema
+Usuarios
+Hardware
+FS
+Instalación de software
+Configuración Red
+Respaldos
+Procesos
+Seguridad
+
+//////////////////
+
+Estructura /etc/passwd
+
+Nombre de la cuenta (politicas)
+Password Codificado
+UID
+GID
+Información del usuario
+Directorio home
+Shell
+
+///////////////////
+Estructura /etc/group
+
+Nombre grupo
+Password
+GID
+Usuarios adicionales al grupo
+
+///////////////////
+Estructura /etc/shadow
+
+Nombre
+Password Cifrado
+Ultimo cambio (numero de dias desde enero 1 de 1970)
+Numero de dias que deben transcurrir para el proximo cambio de password
+Numero de dias maximo de validez de la cuenta
+Dias de aviso antes de caducar el password
+Dias despues de que un password caduque para deshabilitar la cuenta
+Fecha de expiración del password (1 Enero 1970)
 
