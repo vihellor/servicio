@@ -1,0 +1,31 @@
+ ✔ cómo cambiar una palabra por otra palabra en todo el archivo @done (18-04-04 14:09)
+
+ ✔ investigar macro en vi, cómo se programa una y probarla @done (18-04-04 14:10)
+
+ ✔ cambiar todas las palabras @done (18-04-04 14:10)
+   ✔  bash→sh @done (18-04-04 14:10)  
+   ✔ root → raiz @done (18-04-04 14:10)
+
+   ✔ copien las 10 ultimas lineas al principio del archivo y las 10 primeras al final @done (18-04-04 14:10)
+
+   ✔ al final del archivo poner datos personales: nombre, escuela y boleta @done (18-04-04 14:10)
+
+   ✔ cambiar todas las sbin @done (18-04-04 14:10)
+
+ ✔ buscar find para poder usar grep @done (18-04-06 16:00)
+ ✔ hacer que se muestren los nombres del group de /etc/group desde /etc/passwd @done (18-04-06 16:00)
+       cut -d ":" -f4 passwd | sort -n > groups
+       egrep -f groups group | cut -d ":" -f1
+ ✔ buscar qué significa <> @done (18-04-06 10:57)
+ ✔ buscar que hace el comando find @done (18-04-06 11:25)
+
+ ☐ hacer el script7.sh con awk
+ ✔ hacer un script que reciba como parametro el nombre de un proceso y que traiga todos los processid de ese proceso quedó guardado en script8.sh @done (18-04-06 16:36)
+
+
+ ☐ Investigar el problema de los generales bizantinos
+ ☐ Mandar la tarea con:
+   ☐ archivo ejecutable
+   ☐ screenshots
+   ☐ código fuente
+   ☐ readme.txt

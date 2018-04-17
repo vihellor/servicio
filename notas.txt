@@ -1,0 +1,416 @@
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+
+Expresiones regulares
+{1,1}que solamente aparezca 1 vez 
+[^  ] eso es para negación
+
+grep //funciona con REgEx
+	-i 	//ignora capitales 
+	-H 	//imprime el nombre del archivo
+	-n 	//imprime el numero de linea
+	-v 	//invertir los resultados
+
+fgrep //funciona con patrones, uno o varios
+	-f //se selecciona un file con todos los patrones a buscar
+
+egrep //grep + fgrep
+
+sort
+	-d //diccionario
+	-n //numerico
+	-r //descendente
+	-t //delimitador
+	-k //ordenar a partir del campo ejemplo sort-t ":" -k 3 archivo
+	-u //uniq
+	-f //no considera su valor ASCII
+
+tr cadena1 cadena 2 //sustituir caracteres pero 1 a 1 de las cadenas
+	-d  //borrar caracteres
+	-s  //borrar repetidos del caracter
+
+uniq //busca unicos
+	-c //hace un conteo
+
+cut -fn,m  //corta por filas
+	-d"delimitador" //delimitador
+	-cn,m  //corta por columnas
+
+head -n
+
+tail -f
+	-n
+
+Shell
+
+shift //hace un corrimiento a la derecha de argumentos y si se le asigna un número hace ese número de corrimientos a la derecha
+
+if[condición]; then
+	//comandos
+fi
+
+if[condición]; then
+	//comandos
+else
+	//comandos
+fi
+
+for i in `ls` //ejecución
+do
+	//comandos
+done
+
+while[ condicion]; do
+	//comandos
+done
+
+break //rompe iteración
+
+continue //continua con la siguiente iteración
+
+read //Lee datos de la entrada estandar
+
+//operadores
+
+eq // == numeros
+ne // != numeros
+gt // >
+ge // >=
+lt // <
+le // <=
+
+test
+	-f //verifica si el archivo existe y es una archivo ordinario
+	-e //verifica si existe el archivo
+	-d //verifica si existe el archivo y es un directorio
+
+find //buscar
+	-perm 7777	//permisos
+	-mtime 1 	//modificado en las últimas 24 hrs
+	-ctime 1 	//creado en las ultimas 24 hrs
+	-exec		//ejecutar un comando extra
+
+ejemplos:
+find / -exec egrep -Hin "patron" {} \;
+find | grep filename
+
+
+
+
+/////////////////////////////////////clase extra
+interested
+ISO 2701
+CSIRT manual enisa
+NIST
+
+
+
+cifrado César // si es de más o menos de 3 es cifrado por sustitución
+
+cifrado:
+C(xi)=(Pi+3)mod26
+
+descifrado:
+Pi=(Xi-3)mod 26
+
+Ejemplo: descrifrar el siguiente texto mediante análisis de frecuencias
+
+corrimiento en 6
+
+ZNK KGXRE HOXJ MKZY ZNK CUXS
+
+THE EARLY BIRD GETS THE WORM
+
+E= 13%
+T = 9%
+A & O = 8%
+I & S = 7%
+H & R = 6%
+
+vigénere
+C(Xi) = (Pi + K) mod L
+D(Pi) = (Xi + K) mod L
+
+polialfabetico
+
+P   O   L   I   T   E   C   N   I   C   O
+15  14  11  8   19  4   2   13  8   2   14
+I   P   N   I   P   N   I   P   N   I   P
+8   15  13  8   15  13  8   15  13  8   15
+------------------------------------------
+23  3   24  16  8   17  10  2   21  10  3
+X   D   Y   Q   I   R   K   C   V   K   D
+
+
+///////////
+Cifrado por bloques
+1. clave r = {1,2,3...}
+2. Dividido el texto claro en bloques de m tamaño.
+3. Cifrar los bloques
+
+Ejemplo: usar la clave {1,2,3,4} r(1) =3
+								 r(2) =1
+								 r(3) =4
+								 r(4) =2
+
+Para cifrar el texto:
+PIRATE ATTACK
+|--||--||--| //dividir el texto en bloques de 4
+
+
+1   2   3   4
+P   I   R   A
+I   A   P   R
+
+1   2   3   4
+T   E   A   T
+E   T   T   A   
+
+1   2   3   4
+T   A   C   K
+A   K   T   C
+
+palabra cifrada IAPRETTAAKTC
+
+Ejercicio descrifrar el tecto SWUETRAEOEHS
+
+SWUE
+USEW
+
+TRAE
+ATER
+
+OEHS
+HOSE
+
+
+////////////
+railfence
+
+k=3 instituto politecnico nacional
+
+i  t  u  p  i  c  c  a  o  l
+ n  i  t  o  t  n  o  c  n  
+  s  t  o  l  e  i  n  i  a
+
+texto cifrado
+itupiccnitotnostolein
+
+vg.reyesmacedo@gmail.com
+
+Criptografía
+
+Moderna
+
+Simetrica	Asimetrica
+DES 		RSA
+ triple-DES
+AES
+
+
+/////////////////
+Protocolo de intercambio de llaves
+
+Diffu-Hellman
+
+Alice y Bob
+
+Alice:
+
+
+
+Pasos:
+	1.-Se establece un primo p y m generador g pertenece Zp (Información Pública)
+	2.-Alice escoge a perteece Zp-1, al azar.
+	Calcula A=g^amodP y envia A a Bob.
+	3.-Bob escoge b pertenece Zp-1 al azar, calcula: B=g^bmodp y envía B a Alice
+
+Ejemplo:
+
+1.- Alice y Bob acuerdan P=23 y g=5.
+2.- Alice escoge a=6 y calcula: g^amodP = 5^6mod23=8, envía a Bob
+3.- Bob elige un número b = 15 g^bmodP=5^15mod23=19
+4.- Alice calcula k=B^amodP
+				  k=19^6mod23
+				  k=2
+5.- Bob calcula k=A^bmodP
+				k=8^15mod23
+				k=2
+
+
+
+/////////////
+Rivest Shamir Adleman
+
+RSA
+
+emisor -> mensaje -> receptor
+Pbk						Pbk
+Pvk						Pvk
+			C(Pbk)		D(Pvk)
+
+emisor <- mensaje <- receptor
+D(Pvk)		C(Pbk)
+
+1.- Escoger dos números
+primos p, q
+	p=11, q=23
+2.- Calcular=p*q
+	n=11(23)=253
+3.- Calcular el valor t = (p-1)*(q-1)
+					  t = 10(22)=220
+4.- Buscar el número "e" tal que e sea impar y coprimo con t.
+	1<e<t, MCD(t,e)=1
+	en este caso, e=3 MCD(220,3)=1
+
+%.- se generar claves;
+	5. Se calcula el exponente privado de RSA
+		d=inv(e,t)
+		e*d=1modt
+		d=((y*t)+1)/e para y=1,2,3... hasta que d sea un valor natural
+		d=147
+		Así, la clave pública (e,n) = (3,253)
+		        clave privada (e,n) = (147,253)
+
+Cifrado:
+C=M^e mod n
+Descifrado:
+M = C^d mod n
+
+Ejercicio:
+Cifrar la palabra:
+SEGURIDAD
+
+M = 18,4,6,20,17,8,3,0,3
+C = 13,64,216,157,106,6,27,0,27 //ver sra.py
+
+
+//////////////////////
+Funciones Hash
+(Funciones picadillo/Resúmen)
+Función: Regla de correspondencia que asigna elementos de un conjunto A con elementos de un conjunto B
+
+Unidireccionales
+-> Fáciles de calcular de izquierda a derecha
+
+Biyección
+Suprayectivas e Inyectivas
+
+Inyectivas (1 a 1)
+
+Supreayectivas (relación entre 2 grupos sin ser 1 a 1)
+
+
+/////////////////////
+DSA = RSA + Funciones hash
+Firma digital
+
+
+Documento -> f(h) -> cifrar Pvk -> :D -> descifrar Pbk -> hash
+Documento -> :D -> f(h) -> hash
+
+/////////////////////
+
+BlockChain
+
+eso está intenso
+
+//////////////////////
+
+cifrado el gamal
+
+1.- se escogen un número primo P.
+2.- Se escogen dos numeros aleatorios g pertenece a Zp y a pertenece a (P-1)
+3.- Se calcula el valor de k = g^a mod P
+4.- la clave pública es: (g1p1k)
+    la clave privda : (a)
+
+Cifrado
+Y_1=g^b mod P
+Y_2=k^b m mod P
+Mensaje: C_b (m_1 b) =(Y_1 Y_2)
+
+Logaritmo discreto:
+log_g K(mod P) = a
+
+Descifrado:
+m=Y_1^(-a) Y_2 mod P
+m=Y_1^(P-1-a) Y_2 mod P
+
+Ejercicio Alice escoge los valores:
+p=17 p-1=16 g=3 a=6
+Calcula el valor de k=g^a mod p = 3^6 mod 17 =15
+
+
+Entonces:
+clave pública (g,p,h) = (3,17,15)
+clave privada (a) = 6.congratulate
+
+Bob tiene el texto claro m=9, entonces escoge al azar b=5, donde b pertenece a (p-1)
+y_1 = g^b mod p = 3^5 mod 17 = 5
+y_2 = k^b m mod p = 15^5 (9) mod 17 = 1
+
+Texto cifrado:
+C_5(9,5) = (5,1)
+
+Descifrado:
+m= y_1^(p-1-a) y_2 mod p
+m = 5^ (17-1-6) (1) mod 17
+m = 5^10 mod 17
+m = 9
+
+///////////////////
+openssl crear un texto cifrado
+
+openssl genrsa -out miclaveprivada.pem -des 1024
+
+openssl rsa -in miclaveprivada.pem -pubout -out miclavepublica.pemwriting RSA key
+
+openssl rsautl -encrypt -pubin -inkey miclavepublica.pem -in archivo2.txt  -out cifrado2.bin
+
+openssl rsautl -decrypt -inkey miclaveprivada.pem -in cifrado2.bin -out salida.txt
+
+openssl rsautl -sign -inkey miclaveprivada.pem -in texto3.txt -out firma.bin
+
+openssl rsautl -verify -pubin -inkey miclavepublica.pem -in firma.bin -out original.txt
+
+
+////////////////////
+Agenda
+
+Habilidaddes y funciones de un administrador de sistema
+bash, utilerías
+Programación shell
+secuencia booting
+Usuarios
+Kernel y Dispositivos
+Software
+Red
+Respaldos
+Procesos
+Seguridad
+
