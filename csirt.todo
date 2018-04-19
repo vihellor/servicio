@@ -21,6 +21,13 @@
 
  ☐ hacer el script7.sh con awk
  ✔ hacer un script que reciba como parametro el nombre de un proceso y que traiga todos los processid de ese proceso quedó guardado en script8.sh @done (18-04-06 16:36)
+Ejercicios:
+ ✔ crear el grupo cuentas @done (18-04-17 16:10)
+ ✔ crear manualmente la cuenta curso @done (18-04-17 16:10)
+ ✔ crear mediante comandos la cuenta curso2 @done (18-04-17 16:10)
+ ✔ contar cuantas cuentas perteneces a cada grupo //cat /etc/passwd | cut -d ":" -f4 | uniq -c @done (18-04-17 16:10)
+ ✔ Script que reciba un GID e indique que cuentas pertenecen a ese grupo //esta en el script 11 @done (18-04-18 17:12)
+ ✔ Cuentas deshabilitadas egrep '!' /etc/shadow @done (18-04-18 14:23)
 
 
  ☐ Investigar el problema de los generales bizantinos
@@ -29,3 +36,4 @@
    ☐ screenshots
    ☐ código fuente
    ☐ readme.txt
+ ☐ Leer RFC de ip y tcp

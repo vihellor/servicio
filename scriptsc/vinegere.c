@@ -3,7 +3,9 @@
 
 int main() {
 	char s1[100],s2[100],s3[100];
+	printf("Escribe la primer palabra\n");
 	gets(s1);
+	printf("Escribe la segunda palabra\n");
 	gets(s2);
  	int c = 0;
  	//printf("%d\n", s1[c]);

@@ -22,7 +22,7 @@ int main() {
 		c++;
 	}
 	for (int i = 0; i < 26; ++i){
-		printf("%c : %f\n",i+97,(pro[i]*100/cont));
+		printf("%f:%c\n",(pro[i]*100/cont),i+97);
 	}
 	printf("conteo : %d\n",cont);
 	

@@ -118,8 +118,9 @@ ejemplos:
 find / -exec egrep -Hin "patron" {} \;
 find | grep filename
 
+ps -fea //muestra os procesos desde el primero implementado
 
-
+uname -a //muestra los datos del systema
 
 /////////////////////////////////////clase extra
 interested
@@ -471,3 +472,78 @@ Dias de aviso antes de caducar el password
 Dias despues de que un password caduque para deshabilitar la cuenta
 Fecha de expiración del password (1 Enero 1970)
 
+////////////////////
+Usuarios
+
+Asignar un username, ID, y un grupo primario
+Asignar la entrada a /etc/passwd y /etc/group (vipw)
+Asignar un password (password)
+Opcional (limites de espacio y procesamiento, características de passwords)
+Crear el directorio home (chown, chgrp)
+Personalizar scripts de inicio (.ashrc,.bash_profile)
+Probar la cuenta
+useradd -c "comentario" -d /home/cuenta -m /home/cuenta -g GID -u UID -s /bin/bash cuenta.
+groupadd -g <GID> <name>
+
+//usuarios mayores a 1000 son los normales
+
+////////////////////
+Manejo de kernel
+
+major number //
+minor number //
+
+Monolitico
+Modulos
+	lsmod 	//ver todos los modulos del kernel
+	rmmod	//borrar un modulo del kernel
+	Insmod	//insertar modulo
+/dev/proc
+
+/etc/modprobe.d/blacklist 	//lista negra de modulos a no cargar
+/modules	//lugar donde se cargan modulos extras al kernel
+
+/lib/modules/<VK>/kernel/drivers/char/lp.ko 	//modulo lp <VK> es version del kernel consegida con uname -a
+
+apt-get intall git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc
+
+cd /usr/src/linux-headers<VK>/
+make menuconfig 	//contruir modulos para cargar kernel
+make -j 4
+make modules_install
+make install -j 4
+update-initramfs -c -k version_kernel	//mini kernel anterior al kernel
+update-grub		//para tener distintos kernels en el boot
+
+sysctl	//modificar banderas de los modulos del kernel
+
+/proc 				//carpeta a cambiarnos
+
+cat modules 		//modulos ejecutandose y su lugar en memoria
+cat meminfo 		//donde se guarda el estado de la memoria
+cat filesystems 	//sistemas de archivo que soporta este kernel
+
+top //lee dinamicamente meminfo
+
+ls -l /dev/sda 		//para ver en qué sd se está corriendo mi sistema y su major y minor number
+
+ls -l /dev/sda* 		//para todos los sd's sistema y su major y minor number
+
+ls -l /proc/sys 		//donde se guardan todos los archivos a modificar a tiempo real
+
+ls -l /proc/sys/net/ipv4 	//para ver las configuraciones de red ipv4
+
+sysctl net.ipv4.ip_forward=1 //setea valor en 1 en /proc/sys/net/ipv4/ip_forward
+
+/////////////////////////////
+Dispositivos
+
+Dispositivos Carácter
+Dispositivos Bloque
+mknod nombre tipo MN mn
+fdisk /dev/sdb
+mkfs -t ext3 /dev/sdb1
+mount -t ext3 /dev/sdb1 /mount/disk2
+umount
+
+dd if=/dev/zero of=archivo b=1024 count = 100000
