@@ -4,7 +4,7 @@
 // main() is where program execution begins.
 int main() {
 	char s[100];
-	printf("Escribe la palabra a anlizar\n");
+	printf("Escribe la frase a cifrar\n");
 	gets(s);
 	printf("Selecciona el numero a considerar\n");
 	int num;

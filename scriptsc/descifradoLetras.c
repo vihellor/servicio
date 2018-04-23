@@ -7,6 +7,7 @@ int main() {
 	char s[1000];
 	gets(s);
 	char pro[30];
+	//primer ejercicio
 	pro[0] = 'x'; //a
 	pro[1] = 't'; //b
 	pro[2] = 'w'; //c
@@ -33,7 +34,7 @@ int main() {
 	pro[23] = 'f'; //x
 	pro[24] = 'm'; //y
 	pro[25] = 'j'; //z
-	
+
 	char s2[1000];
 	int c = 0;
 	while (s[c] != '\0') {

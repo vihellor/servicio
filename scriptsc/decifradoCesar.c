@@ -3,7 +3,7 @@
 
 // main() is where program execution begins.
 int main() {
-	printf("Escribe la palabra a intentar descifrar con sustitucion\n");
+	printf("Escribe la palabra a intentar descifrar con cesar\n");
 	char s[100];
 	int c = 0;
 	gets(s);

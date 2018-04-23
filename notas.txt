@@ -546,4 +546,48 @@ mkfs -t ext3 /dev/sdb1
 mount -t ext3 /dev/sdb1 /mount/disk2
 umount
 
-dd if=/dev/zero of=archivo b=1024 count = 100000
+dd if=/dev/zero of=archivo b=1024 count = 100000 	//hacer un sistema de archivos de 98 MBllamado archivo
+/etc/fstab 										 	//archivo donde vienen los discos a montar
+
+
+//////////////////////////////
+Software
+
+Automatizada
+	Precompilados
+	No se controla
+	apt-cache search nombre_software
+	apt-get install nombre_software
+Manual
+	Control
+	Compiladores especificos de la arquitectura
+	Shc
+	Httpd
+		Readme
+		Install
+		./configura
+			--help
+			..prefic=/ruta
+		make install
+			distclean clean
+
+/etc/apt/sourcelist //es donde se encuentran los repositorios a agregar
+
+dpkg -i nombre_paquete //intalar un paquete a la antigua
+
+////////////////////////////////
+Procesos
+
+Background
+Foreground
+jobs		//procesos detenidos
+ps -fea 	//ver todos los procesos desde el init
+top 		//monitor en consola
+Pstree		//
+Ctrl + z 	//pausar un proceso
+bg 			//mandar un proceso pausado a background
+fg 			//mandar un proceso pausado a foreground
+uptime 		//
+kil 		//matar un proceso
+	-15 	//matar un proceso una vez que se cierren los archivos correctamente
+	-9 		//matar el proceso sin importar nada

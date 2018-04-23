@@ -19,7 +19,7 @@
  ✔ buscar qué significa <> @done (18-04-06 10:57)
  ✔ buscar que hace el comando find @done (18-04-06 11:25)
 
- ☐ hacer el script7.sh con awk
+ ✔ hacer el script7.sh con awk @done (18-04-19 14:59)
  ✔ hacer un script que reciba como parametro el nombre de un proceso y que traiga todos los processid de ese proceso quedó guardado en script8.sh @done (18-04-06 16:36)
 Ejercicios:
  ✔ crear el grupo cuentas @done (18-04-17 16:10)
@@ -37,3 +37,5 @@ Ejercicios:
    ☐ código fuente
    ☐ readme.txt
  ☐ Leer RFC de ip y tcp
+ ☐ Investigar que hace el archivo /etc/fstab
+ ☐ Instalar apache desde codigo fuente
