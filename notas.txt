@@ -591,3 +591,205 @@ uptime 		//
 kil 		//matar un proceso
 	-15 	//matar un proceso una vez que se cierren los archivos correctamente
 	-9 		//matar el proceso sin importar nada
+
+//////////////////////////////////
+Redes
+
+ifconfig
+	ifconfig eth0 netmask x.x.x.x broadcast x.x.x.x ip
+	ifconfig <interfaz de red> ip //para cambiar ip
+route
+	route add default gw x.x.x.x
+netstat 		//todas las conexiones abiertas
+netstat -tulpn 	//puertos abiertos esté sirve para cerrar puertos
+	-a todas las conexiones
+hostname
+/etc/hosts	//archivo dns por default de la máquina
+	listado de maquinas [ip nombre]
+/etc/hostname 	//nombre del host que tenemos
+/etc/resolv.conf 
+	nameserver x.x.x.x
+nslookup 	//buscar y o resolver dominios
+nslookup google.com 	//ver el dominio de google (digase ip)
+
+/etc/network/interfaces
+	auto eth0
+	iface eth0 inet dhcp
+
+	auto eth0
+	iface eth0 inet static
+	address 192.168.3.90
+	gateway 192.168.3.1
+	netmask 255.255.255.0
+	broadcast 192.168.3.255
+
+/etc/init.d/networking restart
+
+///////////////////////////////////
+
+Inicio y parada del sistema
+
+1. Bios
+1.5 Firmware
+2. Bootloader
+3. Kernel
+4. Init
+5. Runlevels
+
+/////////////////////////////////////
+Runlevels
+0 Apagado
+1 Single user
+2 Multiusuario
+3 Servicios de red
+4 No usado
+5 Grafico
+6 Reinicio
+
+runlevel //ver el nuvel en que se corre
+init 6 //reiniciar
+
+/etc/init.d //donde vienen todos los scripts de inicio
+/etc/rc$.d
+
+/////////////////////////////////////
+Runlevels (SysV)
+
+/etc/init/servicios.conf
+/etc/init.d/scripts
+	funcion start
+	funcion stop
+initctl [start|stop|status] service
+service SERVICIO start|stop|status
+update-rc.d SERVICIO enable| [S|2|3|4|5]
+init runlevel
+sysv-rc-conf | chkconfig
+	--list levels
+	--level 35 ssh off
+shutdown -rt
+
+System-halt
+init 0 //apagar tu compu
+
+/////////////////////////////////////
+Systemctl
+
+Systemd utilities
+	systemctl
+	journalctl
+	notify
+	analyze
+	cgls
+	cgtop
+	loginctl
+	nspawn
+Systemd daemons
+	systemd
+	journald
+	networkd
+	loginduser
+	session
+System Targets
+	bootmode
+	basic
+	shutdown
+	reboot
+	multiuser
+		dbus
+		telephony
+		dlog
+		logind
+	graphical
+		user-session
+	user-session
+		display service
+		tizen service
+Systemd Core
+	Manager
+	systemd
+	unit
+		service
+		timer
+		mount
+		target
+		snapshot
+		path
+		socket
+		swap
+	login
+		miltiseat
+		session
+		inhibit
+		pam
+	namespace
+	log
+	cgroup
+	dbus
+systemd Libraries
+	dbus-1
+	libpam
+	libcap
+	libcryptsetup
+	tcpwrapper
+	libaudit
+	libnotify
+Linux Kernel
+	cgroups
+	autofs
+	kdus
+
+//////////////////////
+systemclt
+
+/etc/systemd/system/
+/lib/systemd/system/
+Targets
+	[Unit]
+	Description=Mi script automatico
+	After=network.target
+
+	[service]
+	ExecStart=/usr/local/bin/myscript.sh
+
+	[install]
+	WantedBy=default.target
+
+fsck //checar los discos del dispositivo
+
+///////////////////////
+Respaldos Politica
+tar -cf file.tar directorios 		//comprimir un directorio
+tar -cvzf file.tar directorios 		//comprimir un directorio
+tar -tf file.tar 					//mostrar los archivos comprimidos
+tar -rf fie.tar archivo 			//mete otro archivo al tar
+tar --delete -f file.tar archivo 	//elimina el archivo dentro de un tar
+tar -u file.tar
+tar -xvf archivo.tar
+	-z
+find . | cpio -ov > archivo.cpio 	//comprimir
+cpio -idv < archivo.cpio 			//descomprimir
+dd -if=archivo of =archivo
+bzip2 archivo 						//comprimir
+bunzip2 archivo.bz2 				//descomprimir
+
+////////////////////////
+Seguridad
+
+Bitacoras
+	Rsyslog
+		/etc/rsyslog.d/50-default.conf
+		Facilities (kernel,mail,lpr,daemon,auth)
+		Levels(emerg,alert,err,warn,notice,info,debug)
+	Iptables
+		-L, -F
+		Politica por default
+			Iptables -P INPUT DROP
+		IPtables -A INPUT
+
+/etc/rsyslog.conf 	//configración del demonio que verifica todas las trazas del subsistema
+/var/log/ 			//donde se guardan todos los logs en linux
+dmesg 				//mensajes generados del sistema desde que arrancó
+last 				//marca accesos de los usuarios
+
+/////////////////////////
+tcpdump -i eth0 -nvXv host IP -W name.pcap

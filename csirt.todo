@@ -31,11 +31,28 @@ Ejercicios:
 
 
  ☐ Investigar el problema de los generales bizantinos
- ☐ Mandar la tarea con:
-   ☐ archivo ejecutable
-   ☐ screenshots
-   ☐ código fuente
-   ☐ readme.txt
+ ✔ Mandar la tarea con: @done (18-04-24 14:59)
+   ✔ archivo ejecutable @done (18-04-24 14:59)
+   ✔ screenshots @done (18-04-24 14:59)
+   ✔ código fuente @done (18-04-24 14:59)
+   ✔ readme.txt @done (18-04-24 14:59)
  ☐ Leer RFC de ip y tcp
  ☐ Investigar que hace el archivo /etc/fstab
  ☐ Instalar apache desde codigo fuente
+ ☐ investigar redes no ruteables
+ ☐ investigar three handshake
+ ☐ investigar TTL
+ ☐ Genera script que se ejecute al inicio con runlevel 5
+   ☐ que mande un mensaje /var/log/user usando logrotate
+   ☐ con ambos sistemas de servicios SV y SD
+   ☐ Obtener el ultimo login
+ ☐ instalar kali 2017.2
+   ☐ activar la bandera de configuración > Sistema > Procesador > habilitar PAE/NX
+   ☐ conectar la tarjeta de red en manera de red
+   ☐ ip 192.168.1.4
+   ☐ 255.255.255.0
+   ☐ 192.168.1.100
+   ☐ carlo es 16
+ ☐ Smash the stack for funny
+ ☐ Contraseña es AdminKali
+ 
