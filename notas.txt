@@ -793,3 +793,99 @@ last 				//marca accesos de los usuarios
 
 /////////////////////////
 tcpdump -i eth0 -nvXv host IP -W name.pcap
+
+/////////////////////////
+Fases del pentesting
+
+inteltechniques.com by michael bazzell facebooktools
+whois			//paginas para ver quién es, desde su telefono hasta otrs cosas
+
+Exploit: 		//código para explotar una vulnerabilidad especifica
+Payload: 		//código ejecutado después de un exploit
+
+cve and cpe		//páginas para encontrar vulnerabilidades
+
+wayback machine 	//pagina para ver paginas anteriores de internet
+
+msfconsole 			//herramient para explotación
+use <<exploit_name>>
+
+show options
+
+set <<NAME>>  <<param>>
+
+show payloads
+
+set payload <<payloadName>>
+
+show options
+
+exploit
+
+
+
+searchsploit 			//herramient para explotación
+
+eth certification 		//buscar sobre ella
+
+1. Reconocimiento: 
+	pasivo
+		a través de un tercero como usar facebook o cualquier cosa que no sea directamente de la empresa
+	activo
+		cuando ya estás interactuando con la empresa directamente
+2. Analisis de vulnerabilidades
+3. Explotación
+4. Post-explotación
+5. Reporte
+6. Recuperación
+
+///////////////////////
+
+SQLinjection  //hacer una sentencia e SQL valida para hacer cosas usualmente entre '
+c99.php //shell en php
+
+///////////////////////
+páginas pata CTFs
+
+https://ctftime.org/
+https://www.hackthebox.eu/
+
+pagina con vulnerabilidades conocidas
+
+http://cve.mitre.org/
+
+///////////////////////
+
+sabuendo que tenemos un ejecutable  a.out podemos pasarlo a ensamblador con:
+
+objdump -M -d a.out 	//leer el man para entenderlo
+
+idapro 					//entender mejor código de ensamblador
+
+////////////////////////
+ensabloador
+
+x86:
+
+EAX 	//
+EBX 	//
+ECX 	//
+EDX 	//
+
+EBP 	//
+ESP 	//
+
+ESI 	//
+EDI 	//
+
+EIP		//apuntador a siguiente instruccion
+
+lea 	//
+and 	//
+push 	//agrega algo a la pila
+mov 	//mover lo de un registro a otro
+call 	//
+add 	//
+nop 	//no operation
+pop 	//saca algo de la pila
+ret 	//regresa al lugar donde se ejecutó

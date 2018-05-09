@@ -38,21 +38,29 @@ Ejercicios:
    ✔ readme.txt @done (18-04-24 14:59)
  ☐ Leer RFC de ip y tcp
  ☐ Investigar que hace el archivo /etc/fstab
- ☐ Instalar apache desde codigo fuente
+ ✔ Instalar apache desde codigo fuente @done (18-05-09 14:10)
  ☐ investigar redes no ruteables
- ☐ investigar three handshake
+ ✔ investigar three handshake @done (18-05-09 14:11)
  ☐ investigar TTL
  ☐ Genera script que se ejecute al inicio con runlevel 5
    ☐ que mande un mensaje /var/log/user usando logrotate
    ☐ con ambos sistemas de servicios SV y SD
    ☐ Obtener el ultimo login
- ☐ instalar kali 2017.2
-   ☐ activar la bandera de configuración > Sistema > Procesador > habilitar PAE/NX
-   ☐ conectar la tarjeta de red en manera de red
-   ☐ ip 192.168.1.4
-   ☐ 255.255.255.0
-   ☐ 192.168.1.100
-   ☐ carlo es 16
+ ✔ instalar kali 2017.2 @done (18-05-09 14:10)
+   ✔ activar la bandera de configuración > Sistema > Procesador > habilitar PAE/NX @done (18-05-09 14:10)
+   ✔ conectar la tarjeta de red en manera de red @done (18-05-09 14:10)
+   ✔ ip 192.168.1.4 @done (18-05-09 14:10)
+   ✔ 255.255.255.0 @done (18-05-09 14:10)
+   ✔ 192.168.1.100 @done (18-05-09 14:10)
+   ✔ carlo es 16 @done (18-05-09 14:10)
  ☐ Smash the stack for funny
- ☐ Contraseña es AdminKali
+ ✔ Contraseña es AdminKali @done (18-05-02 15:09)
+ ✔ que es shell y que es bash y sus diferencias @done (18-05-03 08:59)
+ ✔ URL y URI @done (18-05-09 14:10)
+ ✔ uid @done (18-05-09 14:10)
+ ✔ gid @done (18-05-09 14:10)
+ ✔ set uid @done (18-05-09 14:10)
+ ✔ set gid @done (18-05-09 14:10)
+ ☐ buffer overflow
+ ☐ format strings attack
  
