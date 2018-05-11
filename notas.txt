@@ -854,6 +854,10 @@ pagina con vulnerabilidades conocidas
 
 http://cve.mitre.org/
 
+pagina con otros juegos y retos
+
+root.me.org
+
 ///////////////////////
 
 sabuendo que tenemos un ejecutable  a.out podemos pasarlo a ensamblador con:
@@ -889,3 +893,23 @@ add 	//
 nop 	//no operation
 pop 	//saca algo de la pila
 ret 	//regresa al lugar donde se ejecutó
+
+//////////////////////////
+
+1.- No hay respuesta con ping
+2.- Hacer un nmap comun
+3.- Hacer un nmap sin ping para detectar puertos //Pn
+4.- Se encontró el puerto 666
+4.- Expandir el rango de busqueda de puertos 	//-p 1-65535
+5.- Se encontró el puerto 4545 					//fui el primero en encontrarlo
+6.- Se probó en un navegador el nuevo puerto
+7.- Se encontró un servidor web
+8.- Se encontró código en binario que dice "anitalavalatina/"
+9.- Se probó con esa extensión y se encontró un indice
+10.- Se exploró en el html y decía FIND THE INDEX 
+11.- En el index viene una cadena un tanto aleatoria
+12.- en el no es tan fácil viene una cadena alfinal
+13.- La mini cadena si se decifra en base 64 es "noEsTanFacil/"
+14.- La cadena grande decifrada en base 64 sale un gato en ascii
+15.- usando netcat en el puerto 666 y mandando el mensaje "muyFacil"
+16.- La cadena es: csirt{laRespuestaEstaEnTuCorazon}
